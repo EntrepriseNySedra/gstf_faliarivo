@@ -1,9 +1,6 @@
-# Enable URL rewriting
 RewriteEngine On
 
-# If a directory or a file exists, use it directly
+# Rediriger tout le trafic vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# Otherwise, forward the request to index.php
-RewriteRule ^ index.php [L]
+RewriteRule ^ index.php [QSA,L]
