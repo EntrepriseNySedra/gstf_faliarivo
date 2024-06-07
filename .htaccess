@@ -1,6 +1,8 @@
-RewriteEngine On
+AddType application/x-httpd-php .php
 
-# Rediriger tout le trafic vers index.php
+
+RewriteEngine On
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L]
+RewriteRule ^(.*)$ index.php [L,QSA]
